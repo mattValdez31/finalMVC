@@ -95,6 +95,16 @@ class routes
         $route->method = 'login';
         $routes[] = $route;
 
+	//Log users out
+
+	$route = new route();
+	$route->http_method = 'POST';
+	$route->action = 'logout';
+	$route->page = 'accounts';
+	$route->controller ='accountsController';
+	$route->method = 'logout';
+	$routes[] = $route;
+
         //YOU WILL NEED TO ADD MORE ROUTES
 
         $route = new route();

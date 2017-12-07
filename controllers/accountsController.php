@@ -144,4 +144,11 @@ class accountsController extends http\controller
 
     }
 
+    public static function logout()
+    {
+    	$_SESSION = array();
+	session_destroy();
+    }
+
+
 }

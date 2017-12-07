@@ -21,25 +21,25 @@ session_start();
 
 <body>
 
-<?php
 
-//session tracker
-if (!empty($_SESSION['userID']))
-{
-        print "Logged in as UserID: " . $_SESSION['userID'] . "<br>";
-}
+<h1>
+    <?php
 
-//this is how you print something  $data contains the record that was selected on the table.
+    //this how to print some data;
+    echo $data['site_name'];
 
-print_r($data);
+    ?> </h1>
 
-?>
-<form action="index.php?page=tasks&action=delete&id=<?php echo $data->id; ?> " method="post" id="form1">
-    <button type="submit" form="form1" value="delete">Delete</button>
+<h1><a href="index.php?page=tasks&action=all">Show All Tasks</a></h1>
+
+<form action="index.php?page=accounts&action=login" method="POST">
+
+    <div class="container">
+        <button type="submit">Logout</button>
+    </div>
+
+
 </form>
-
-
-
 
 <script src="js/scripts.js"></script>
 </body>
