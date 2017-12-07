@@ -19,6 +19,10 @@
 
 <?php
 //this is how you print something
+if (!empty($_SESSION))
+{
+	print "Logged in as UserID: " . $_SESSION['userID'];
+}
 
 print utility\htmlTable::genarateTableFromMultiArray($data);
 
