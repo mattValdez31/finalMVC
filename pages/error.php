@@ -16,17 +16,8 @@
 </head>
 
 <body>
-<h1>All Accounts</h1>
 
-<h1> HI</h1>
-
-<?php
-//this is how you print something
-
-print utility\htmlTable::genarateTableFromMultiArray($data);
-
-
-?>
+<h1><?php echo $data ?></h1>
 
 
 <script src="js/scripts.js"></script>
