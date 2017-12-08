@@ -33,6 +33,15 @@ class routes
 
         //this is the index.php route for POST
 
+	//route for user homepage
+	$route = new route();
+	$route->http_method = 'GET';
+	$route->page = 'user_homepage';
+	$route->action = 'show';
+	$route->controller = 'homepageController';
+	$route->method = 'userShow';
+	$routes[] = $route;
+
         //This is an examole of the post for index
         $route = new route();
         $route->http_method = 'POST';

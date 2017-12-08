@@ -28,6 +28,12 @@ class homepageController extends http\controller
         self::getTemplate('homepage', $templateData);
     }
 
+    public static function userShow()
+    {
+    	$templateData['site_name'] = 'User Site tbd (session)';
+	self::getTemplate('userHomePage', $templateData);
+    }
+
     public static function create()
     {
 
