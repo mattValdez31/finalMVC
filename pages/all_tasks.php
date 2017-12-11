@@ -21,7 +21,7 @@
 //this is how you print something
 if (!empty($_SESSION))
 {
-	print "Logged in as UserID: " . $_SESSION['userID'];
+	print "Logged in as UserID: " . $_SESSION['userEmail'];
 }
 
 print utility\htmlTable::genarateTableFromMultiArray($data);

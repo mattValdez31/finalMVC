@@ -127,12 +127,14 @@ class accountsController extends http\controller
 
             if($user->checkPassword($_POST['password']) == TRUE) {
 
-                echo 'login';
+                //echo 'login';
 
                 session_start();
                 $_SESSION["userID"] = $user->id;
+		$_SESSION["userEmail"] = $user->email;
                 //forward the user to the show all todos page
-                print_r($_SESSION);
+		header('Location: https://web.njit.edu/~mjv32/is601001f17/finalMVC/index.php?page=user_homepage&action=show');
+                //print_r($_SESSION);
             } else {
                 echo 'password does not match';
             }
@@ -146,7 +148,7 @@ class accountsController extends http\controller
 
     public static function logout()
     {
-    	$_SESSION = array();
+    	//$_SESSION = array();
 	session_destroy();
     }
 

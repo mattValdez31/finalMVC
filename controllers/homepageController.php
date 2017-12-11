@@ -30,7 +30,7 @@ class homepageController extends http\controller
 
     public static function userShow()
     {
-    	$templateData['site_name'] = 'User Site tbd (session)';
+    	$templateData['site_name'] = 'User HomePage';
 	self::getTemplate('userHomePage', $templateData);
     }
 

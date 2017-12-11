@@ -21,6 +21,11 @@ session_start();
 
 <body>
 
+<h3>
+   <?php
+   	echo 'Logged in as: ' . $_SESSION['userEmail'];
+   ?>
+</h3>
 
 <h1>
     <?php
