@@ -35,7 +35,17 @@ session_start();
 
     ?> </h1>
 
-<h1><a href="index.php?page=tasks&action=all">Show All Tasks</a></h1>
+<h4><a href="index.php?page=tasks&action=all">Show All Tasks</a></h4>
+
+<form action="index.php?page=tasks&action=show&id=", $_REQUEST['id']  method="POST">
+
+    <div class="container">
+            <label><b>Find Single Task</b></label>
+	            <input type="text" placeholder="Enter Task ID" name="id" required>
+		    <button type="submit">Search</button>
+     </div>
+
+</form>
 
 <form action="index.php?page=accounts&action=logout" method="POST">
 

@@ -132,9 +132,16 @@ class accountsController extends http\controller
                 session_start();
                 $_SESSION["userID"] = $user->id;
 		$_SESSION["userEmail"] = $user->email;
-                //forward the user to the show all todos page
-		header('Location: https://web.njit.edu/~mjv32/is601001f17/finalMVC/index.php?page=user_homepage&action=show');
+                //If admin, fwd to admin homepage. If not, forward the user to the user homepage
+		if ($_SESSION["userEmail"] == 'admin@njit.edu')
+		{
+			header('Location: https://web.njit.edu/~mjv32/is601001f17/finalMVC/index.php?page=admin_homepage&action=show');
+		}
+		else
+		{
+			header('Location: https://web.njit.edu/~mjv32/is601001f17/finalMVC/index.php?page=user_homepage&action=show');
                 //print_r($_SESSION);
+		}
             } else {
                 echo 'password does not match';
             }
