@@ -34,6 +34,12 @@ class homepageController extends http\controller
 	self::getTemplate('userHomePage', $templateData);
     }
 
+    public static function adminShow()
+    {
+    	$templateData['site_name'] = 'Admin HomePage';
+	self::getTemplate('adminHomePage', $templateData);
+    }
+
     public static function create()
     {
 

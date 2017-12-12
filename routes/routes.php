@@ -42,6 +42,15 @@ class routes
 	$route->method = 'userShow';
 	$routes[] = $route;
 
+	//route for admin homepage
+	$route = new route();
+	$route->http_method = 'GET';
+	$route->page = 'admin_homepage';
+	$route->action = 'show';
+	$route->controller = 'homepageController';
+	$route->method = 'adminShow';
+	$routes[] = $route;
+
         //This is an examole of the post for index
         $route = new route();
         $route->http_method = 'POST';
