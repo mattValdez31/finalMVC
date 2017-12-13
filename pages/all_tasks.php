@@ -24,7 +24,7 @@ if (!empty($_SESSION))
 	print "Logged in as UserID: " . $_SESSION['userEmail'];
 }
 
-print utility\htmlTable::genarateTableFromMultiArray($data);
+print utility\htmlTable::generateTableFromMultiArray($data);
 
 
 ?>

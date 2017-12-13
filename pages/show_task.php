@@ -29,7 +29,7 @@ if (!empty($_SESSION['userID']))
         print "Logged in as UserID: " . $_SESSION['userID'] . "<br>";
 }
 
-//this is how you print something  $data contains the record that was selected on the table.
+//this is how you print something |  $data contains the record that was selected on the table.
 
 print_r($data);
 

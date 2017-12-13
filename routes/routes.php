@@ -63,7 +63,7 @@ class routes
         //This is an examole of the post for tasks to show a task
         //GET METHOD index.php?page=tasks&action=show
         $route = new route();
-        $route->http_method = 'GET';
+        $route->http_method = 'POST';
         $route->action = 'show';
         $route->page = 'tasks';
         $route->controller = 'tasksController';

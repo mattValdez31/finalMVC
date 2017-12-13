@@ -37,11 +37,11 @@ session_start();
 
 <h4><a href="index.php?page=tasks&action=all">Show All Tasks</a></h4>
 
-<form action="index.php?page=tasks&action=show&id=", $_REQUEST['id']  method="POST">
+<form action="index.php?page=tasks&action=show"  method="POST">
 
     <div class="container">
             <label><b>Find Single Task</b></label>
-	            <input type="text" placeholder="Enter Task ID" name="id" required>
+	            <input type="text" placeholder="Enter Task ID" name="findID" required>
 		    <button type="submit">Search</button>
      </div>
 
