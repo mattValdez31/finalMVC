@@ -60,18 +60,30 @@ class routes
         $route->method = 'create';
         $routes[] = $route;
 
-        //This is an examole of the post for tasks to show a task
+        //route for tasks to show a single task
         //GET METHOD index.php?page=tasks&action=show
         $route = new route();
-        $route->http_method = 'POST';
+        $route->http_method = 'GET';
         $route->action = 'show';
         $route->page = 'tasks';
         $route->controller = 'tasksController';
         $route->method = 'show';
         $routes[] = $route;
 
+	//route for tasks to show a single task
+	//POST METHOD index.php?page=tasks&action=show
+	$route = new route();
+	$route->http_method = 'POST';
+	$route->action = 'show';
+	$route->page = 'tasks';
+	$route->controller = 'tasksController';
+	$route->method = 'show';
+	$routes[] = $route;
+
         //This is an examole of the post for tasks to list tasks.  See the action matches the method name.
         //you need to add routes for create, edit, and delete
+
+	//route for tasks to show all tasks
         //GET METHOD index.php?page=tasks&action=all
 
         $route = new route();
@@ -81,6 +93,8 @@ class routes
         $route->controller = 'tasksController';
         $route->method = 'all';
         $routes[] = $route;
+
+	//route for accounts to show all accounts
         //GET METHOD index.php?page=accounts&action=all
 //https://web.njit.edu/~kwilliam/mvc/index.php?page=accounts&action=all
 
@@ -91,7 +105,10 @@ class routes
         $route->controller = 'accountsController';
         $route->method = 'all';
         $routes[] = $route;
-        //GET METHOD index.php?page=accounts&action=show
+        
+	//*******************************************
+	//route for accounts to show a single account
+	//GET METHOD index.php?page=accounts&action=show
 
         $route = new route();
         $route->http_method = 'GET';
@@ -101,9 +118,9 @@ class routes
         $route->method = 'show';
         $routes[] = $route;
 
+	//route for account login (redirects to user homepage)
         //This goes in the login form action method
         //GET METHOD index.php?page=accounts&action=login
-
 
         $route = new route();
         $route->http_method = 'POST';
@@ -113,7 +130,7 @@ class routes
         $route->method = 'login';
         $routes[] = $route;
 
-	//Log users out
+	//route for account logout (redirect to Login Page)
 
 	$route = new route();
 	$route->http_method = 'POST';
@@ -149,6 +166,16 @@ class routes
         $route->controller = 'accountsController';
         $route->method = 'edit';
         $routes[] = $route;
+
+	//**************************************
+	//route for tasks to edit existing task
+	$route = new route();
+	$route->http_method = 'GET';
+	$route->action = 'edit';
+	$route->page = 'tasks';
+	$route->controller = 'tasksController';
+	$route->method = 'edit';
+	$routes[] = $route;
 
         $route = new route();
         $route->http_method = 'POST';
