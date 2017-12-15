@@ -44,12 +44,25 @@ class tasksController extends http\controller
 
     //you should check the notes on the project posted in moodle for how to use active record here
 
-    public static function create()
+	//function to view new record form
+    public static function newTask()
     {
         $record = todos::create();
-
-	$
+	self::getTemplate('new_task', $record);
     }
+
+	//function for sending the new task form
+    /*public static function taskCreate()
+    {
+	$record = todos::findOne(
+	$record->owneremail = $_POST['owneremail'];
+	$record->duedate = $_POST['duedate'];
+	$record->message = $_POST['message'];
+	$record->isdone = $_POST['isdone'];
+	$record->save();
+	header("Location: index.php?page=tasks&action=show&id=$record->id");
+
+    }*/
 
     //this is the function to view edit record form
     public static function edit()
