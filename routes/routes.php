@@ -281,6 +281,29 @@ class routes
         $route->controller = $controller;
         $route->method = $method;
     }
+    
+    public static function findRoute($listRoutes)
+    {
+      //this figures out which route matches the page being requested in the URL and returns it so that the controller and method can be called
+        foreach ($listRoutes as $rte) 
+        {
+
+            if ($rte->page == $page && $rte->http_method == $request_method && $rte->action == $action) 
+            {
+                $foundRoute = $rte;
+                break;
+            }
+        }
+        if (is_null($foundRoute)) 
+        {
+            http\controller::getTemplate('notfound');
+            exit;
+        } 
+        else 
+        {
+            return $foundRoute;
+        }
+   }
 }
 
 //this is the route prototype object  you would make a factory to return this
@@ -292,3 +315,5 @@ class route
     public $method;
     public $controller;
 }
+
+?>
