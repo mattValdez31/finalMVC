@@ -168,7 +168,7 @@ class routes
         $routes[] = $route;
 
 	//**************************************
-	//route for tasks to edit existing task
+	//route for tasks to disply edit task page
 	$route = new route();
 	$route->http_method = 'GET';
 	$route->action = 'edit';
@@ -177,6 +177,17 @@ class routes
 	$route->method = 'edit';
 	$routes[] = $route;
 
+	//*************************************
+	//this handles the task edit
+	$route = new route();
+	$route->http_method = 'POST';
+	$route->action = 'store';
+	$route->page = 'tasks';
+	$route->controller = 'tasksController';
+	$route->method = 'store';
+	$routes[] = $route;
+
+	//this handles the account edit
         $route = new route();
         $route->http_method = 'POST';
         $route->action = 'save';

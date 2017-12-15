@@ -35,7 +35,7 @@ print utility\htmlTable::generateTableFromOneRecord($data);
 
 ?>
 
-<a href="index.php?page=' . $referingPage . '&action=show&id=' . $value . '">Edit Task</a>
+<a href="index.php?page=tasks&action=edit&id=<?php echo $data->id; ?>">Edit Task</a>
 
 <form action="index.php?page=tasks&action=delete&id=<?php echo $data->id; ?> " method="post" id="form1">
     <button type="submit" form="form1" value="delete">Delete</button>

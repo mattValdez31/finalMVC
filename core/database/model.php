@@ -8,7 +8,7 @@ abstract class model
 
     public function save()
     {
-
+	$INSERT = null;
         if($this->validate() == FALSE) {
             echo 'failed validation';
             exit;

@@ -97,7 +97,8 @@ class accountsController extends http\controller
         $user->birthday = $_POST['birthday'];
         $user->gender = $_POST['gender'];
         $user->save();
-        header("Location: index.php?page=accounts&action=all");
+	
+       header("Location: index.php?page=accounts&action=all");
 
     }
 
@@ -140,8 +141,9 @@ class accountsController extends http\controller
 		else
 		{
 			header('Location: https://web.njit.edu/~mjv32/is601001f17/finalMVC/index.php?page=user_homepage&action=show');
-                //print_r($_SESSION);
+                
 		}
+		//print_r($_SESSION);
             } else {
                 echo 'password does not match';
             }
