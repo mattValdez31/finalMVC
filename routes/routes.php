@@ -149,7 +149,7 @@ class routes
 	$route->method = 'store';
 	$routes[] = $route;
  
-   //**************************************
+   //*************************************
 	//
 	$route = new route();
 	$route->http_method = 'GET';
