@@ -35,7 +35,7 @@ session_start();
 
     ?> </h1>
 
-<h4><a href="index.php?page=tasks&action=all">Show All Tasks</a></h4>
+<h4><a href="index.php?page=tasks&action=new">Create New Task</a></h4>
 
 <form action="index.php?page=tasks&action=show"  method="POST">
 
@@ -46,6 +46,8 @@ session_start();
      </div>
 
 </form>
+
+<h4><a href="index.php?page=tasks&action=all">Show All Tasks</a></h4>
 
 <form action="index.php?page=accounts&action=logout" method="POST">
 

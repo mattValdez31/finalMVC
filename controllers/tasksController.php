@@ -47,22 +47,23 @@ class tasksController extends http\controller
 	//function to view new record form
     public static function newTask()
     {
-        $record = todos::create();
-	self::getTemplate('new_task', $record);
+	self::getTemplate('new_task');
     }
 
 	//function for sending the new task form
-    /*public static function taskCreate()
+    public static function taskCreate()
     {
-	$record = todos::findOne(
-	$record->owneremail = $_POST['owneremail'];
+    	session_start();
+
+	$record = todos::create();
+	$record->owneremail = $_SESSION['userEmail'];
+	$record->ownerid = $_SESSION['userID'];
 	$record->duedate = $_POST['duedate'];
 	$record->message = $_POST['message'];
-	$record->isdone = $_POST['isdone'];
 	$record->save();
 	header("Location: index.php?page=tasks&action=show&id=$record->id");
 
-    }*/
+    }
 
     //this is the function to view edit record form
     public static function edit()
