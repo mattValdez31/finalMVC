@@ -130,7 +130,7 @@ class routes
         $routes[] = $route;
         
   //**************************************
-	//route for tasks to disply edit task page
+	//route for tasks to display edit task page
 	$route = new route();
 	$route->http_method = 'GET';
 	$route->action = 'edit';
@@ -150,13 +150,23 @@ class routes
 	$routes[] = $route;
  
    //*************************************
-	//
+	//route for tasks to display 'create new task page'
 	$route = new route();
 	$route->http_method = 'GET';
-	$route->action = 'edit';
+	$route->action = 'new';
 	$route->page = 'tasks';
 	$route->controller = 'tasksController';
-	$route->method = 'edit';
+	$route->method = 'newTask';
+	$routes[] = $route;
+
+   //**************************************
+   	//handles the task creation
+	$route = new route();
+	$route->http_method = 'POST';
+	$route->action = 'create';
+	$route->page = 'tasks';
+	$route->controller = 'tasksController';
+	$route->method = 'create';
 	$routes[] = $route;
 
 
