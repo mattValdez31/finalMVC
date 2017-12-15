@@ -35,6 +35,8 @@ session_start();
 
     ?> </h1>
 
+<h4><a href="index.php?page=accounts&action=show&id=<?php echo $_SESSION['userID'] ?>">View Profile</a></h4>
+
 <h4><a href="index.php?page=tasks&action=new">Create New Task</a></h4>
 
 <form action="index.php?page=tasks&action=show"  method="POST">
