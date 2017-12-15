@@ -46,7 +46,9 @@ class tasksController extends http\controller
 
     public static function create()
     {
-        //print_r($_POST);
+        $record = todos::create();
+
+	$
     }
 
     //this is the function to view edit record form

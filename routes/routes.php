@@ -32,7 +32,29 @@ class routes
         $routes[] = $route;
 
         //this is the index.php route for POST
+        
+  //***************************************************
+  //HOMEPAGES
+  //***************************************************
+  
+  //I also use object for the route because it has data and it's easier to access.
+        $route = new route();
+        //this is the index.php route for GET
+        //Specify the request method
+        $route->http_method = 'GET';
+        //specify the page.  index.php?page=index.  (controller name / method called
+        $route->page = 'homepage';
+        //specify the action that is in the URL to trigger this route index.php?page=index&action=show
+        $route->action = 'show';
+        //specify the name of the controller class that will contain the functions that deal with the requests
+        $route->controller = 'homepageController';
+        //specify the name of the method that is called, the method should be the same as the action
+        $route->method = 'show';
+        //this adds the route to the routes array.
+        $routes[] = $route;
 
+        //this is the index.php route for POST
+  
 	//route for user homepage
 	$route = new route();
 	$route->http_method = 'GET';
@@ -59,6 +81,10 @@ class routes
         $route->controller = 'homepageController';
         $route->method = 'create';
         $routes[] = $route;
+
+  //***************************************************
+  //TODOS routes
+  //***************************************************
 
         //route for tasks to show a single task
         //GET METHOD index.php?page=tasks&action=show
@@ -93,6 +119,50 @@ class routes
         $route->controller = 'tasksController';
         $route->method = 'all';
         $routes[] = $route;
+        
+  // handles single task deletion
+        $route = new route();
+        $route->http_method = 'POST';
+        $route->action = 'delete';
+        $route->page = 'tasks';
+        $route->controller = 'tasksController';
+        $route->method = 'delete';
+        $routes[] = $route;
+        
+  //**************************************
+	//route for tasks to disply edit task page
+	$route = new route();
+	$route->http_method = 'GET';
+	$route->action = 'edit';
+	$route->page = 'tasks';
+	$route->controller = 'tasksController';
+	$route->method = 'edit';
+	$routes[] = $route;
+
+	//*************************************
+	//this handles the task edit
+	$route = new route();
+	$route->http_method = 'POST';
+	$route->action = 'store';
+	$route->page = 'tasks';
+	$route->controller = 'tasksController';
+	$route->method = 'store';
+	$routes[] = $route;
+ 
+   //**************************************
+	//
+	$route = new route();
+	$route->http_method = 'GET';
+	$route->action = 'edit';
+	$route->page = 'tasks';
+	$route->controller = 'tasksController';
+	$route->method = 'edit';
+	$routes[] = $route;
+
+
+  //***************************************************
+  //ACCOUNTS routes
+  //***************************************************
 
 	//route for accounts to show all accounts
         //GET METHOD index.php?page=accounts&action=all
@@ -142,13 +212,7 @@ class routes
 
         //YOU WILL NEED TO ADD MORE ROUTES
 
-        $route = new route();
-        $route->http_method = 'POST';
-        $route->action = 'delete';
-        $route->page = 'tasks';
-        $route->controller = 'tasksController';
-        $route->method = 'delete';
-        $routes[] = $route;
+	
 
 
         $route = new route();
@@ -159,6 +223,8 @@ class routes
         $route->method = 'delete';
         $routes[] = $route;
 
+	//************************************************
+	// route for accounts to display edit account page
         $route = new route();
         $route->http_method = 'GET';
         $route->action = 'edit';
@@ -167,25 +233,6 @@ class routes
         $route->method = 'edit';
         $routes[] = $route;
 
-	//**************************************
-	//route for tasks to disply edit task page
-	$route = new route();
-	$route->http_method = 'GET';
-	$route->action = 'edit';
-	$route->page = 'tasks';
-	$route->controller = 'tasksController';
-	$route->method = 'edit';
-	$routes[] = $route;
-
-	//*************************************
-	//this handles the task edit
-	$route = new route();
-	$route->http_method = 'POST';
-	$route->action = 'store';
-	$route->page = 'tasks';
-	$route->controller = 'tasksController';
-	$route->method = 'store';
-	$routes[] = $route;
 
 	//this handles the account edit
         $route = new route();
