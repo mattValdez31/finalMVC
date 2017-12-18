@@ -1,5 +1,6 @@
 <?php
 session_start();
+include("user_header.php");
 ?>
 
 <!doctype html>
@@ -31,7 +32,7 @@ session_start();
     <?php
 
     //this how to print some data;
-    echo $data['site_name'];
+    echo $_SESSION['userFname'] . "'s Home Page";
 
     ?> </h1>
 

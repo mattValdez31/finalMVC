@@ -1,3 +1,15 @@
+<?php
+session_start();
+if ($_SESSION['userEmail'] == 'admin@njit.edu')
+{
+        include("admin_header.php");
+}
+else
+{
+	include("user_header.php");
+}
+?>
+
 <!doctype html>
 
 <html lang="en">
@@ -17,12 +29,14 @@
 
 <body>
 
+<h3>
+   <?php
+           echo 'Logged in as: ' . $_SESSION['userEmail'];
+   ?>
+</h3>
+
 <?php
 //this is how you print something
-if (!empty($_SESSION))
-{
-	print "Logged in as UserID: " . $_SESSION['userEmail'];
-}
 
 print utility\htmlTable::generateTableFromMultiArray($data);
 

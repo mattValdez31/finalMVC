@@ -1,3 +1,8 @@
+<?php
+session_start();
+include("admin_header.php");
+?>
+
 <!doctype html>
 
 <html lang="en">
@@ -16,9 +21,14 @@
 </head>
 
 <body>
-<h1>All Accounts</h1>
 
-<h1> HI</h1>
+<h3>
+   <?php
+       echo 'Logged in as: ' . $_SESSION['userEmail'];
+   ?>
+</h3>
+
+<h1>All Accounts</h1>
 
 <?php
 //this is how you print something

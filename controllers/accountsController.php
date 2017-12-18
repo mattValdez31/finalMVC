@@ -133,6 +133,7 @@ class accountsController extends http\controller
                 session_start();
                 $_SESSION["userID"] = $user->id;
 		$_SESSION["userEmail"] = $user->email;
+		$_SESSION["userFname"] = $user->fname;
                 //If admin, fwd to admin homepage. If not, forward the user to the user homepage
 		if ($_SESSION["userEmail"] == 'admin@njit.edu')
 		{

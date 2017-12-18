@@ -1,5 +1,13 @@
 <?php
 session_start();
+if ($_SESSION['userEmail'] == 'admin@njit.edu')
+{
+        include("admin_header.php");
+}
+else
+{
+	include("user_header.php");
+}
 ?>
 
 <!doctype html>
@@ -21,13 +29,13 @@ session_start();
 
 <body>
 
-<?php
+<h3>
+   <?php
+           echo 'Logged in as: ' . $_SESSION['userEmail'];
+   ?>
+</h3>
 
-//session tracker
-if (!empty($_SESSION['userID']))
-{
-        print "Logged in as UserID: " . $_SESSION['userID'] . "<br>";
-}
+<?php
 
 //this is how you print something |  $data contains the record that was selected on the table.
 

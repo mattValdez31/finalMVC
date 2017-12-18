@@ -1,3 +1,16 @@
+<?php
+session_start();
+if ($_SESSION['userEmail'] == 'admin@njit.edu')
+{
+        include("admin_header.php");
+}
+else
+{
+	include("user_header.php");
+}
+?>
+
+
 <!doctype html>
 
 <html lang="en">
@@ -17,11 +30,11 @@
 
 <body>
 
-<?php
-session_start();
-
-
-?>
+<h3>
+   <?php
+           echo 'Logged in as: ' . $_SESSION['userEmail'];
+   ?>
+</h3>
 
 <form action="index.php?page=tasks&action=create" method="post">
 
