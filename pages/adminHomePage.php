@@ -25,6 +25,14 @@ session_start();
    <?php
    	echo 'Logged in as: ' . $_SESSION['userEmail'];
    ?>
+   <form action="index.php?page=accounts&action=logout" method="POST">
+
+       <div class="container">
+               <button type="submit">Logout</button>
+	           </div>
+
+
+		   </form>
 </h3>
 
 <h1>
@@ -35,7 +43,17 @@ session_start();
 
     ?> </h1>
 
-<h1><a href="index.php?page=accounts&action=all">Show All Accounts</a></h1>
+<h3><a href="index.php?page=accounts&action=all">Show All Accounts</a></h3>
+
+<form action="index.php?page=tasks&action=show"  method="POST">
+
+    <div class="container">
+                <label><b>Find Single Task</b></label>
+		                    <input type="text" placeholder="Enter Task ID" name="findID" required>
+				                        <button type="submit">Search</button>
+							     </div>
+
+							     </form>
 
 <form action="index.php?page=accounts&action=logout" method="POST">
 

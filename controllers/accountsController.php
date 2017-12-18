@@ -63,10 +63,23 @@ class accountsController extends http\controller
             $user->password = $user->setPassword($_POST['password']);
             $user->save();
 
+	    session_start();
+	    $_SESSION["userID"] = $user->id;
+	        $_SESSION["userEmail"] = $user->email;
+		$_SESSION["userFname"] = $user->fname;
+
+	    if ($_SESSION["userEmail"] == 'admin@njit.edu')
+	     {
+		header('Location: https://web.njit.edu/~mjv32/is601001f17/finalMVC/index.php?page=admin_homepage&action=show');
+		}
+		else
+		{
+		header('Location: https://web.njit.edu/~mjv32/is601001f17/finalMVC/index.php?page=user_homepage&action=show');
+		}
+
             //you may want to send the person to a
             // login page or create a session and log them in
             // and then send them to the task list page and a link to create tasks
-            header("Location: index.php?page=accounts&action=all");
 
         } else {
             //You can make a template for errors called error.php
@@ -158,8 +171,10 @@ class accountsController extends http\controller
 
     public static function logout()
     {
-    	//$_SESSION = array();
+    	session_start();
+    	$_SESSION = array();
 	session_destroy();
+	header('Location: https://web.njit.edu/~mjv32/is601001f17/finalMVC/index.php');
     }
 
 

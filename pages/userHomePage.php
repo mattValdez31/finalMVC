@@ -26,6 +26,14 @@ include("user_header.php");
    <?php
    	echo 'Logged in as: ' . $_SESSION['userEmail'];
    ?>
+   <form action="index.php?page=accounts&action=logout" method="POST">
+
+       <div class="container">
+               <button type="submit">Logout</button>
+	           </div>
+
+
+		   </form>
 </h3>
 
 <h1>
@@ -51,15 +59,6 @@ include("user_header.php");
 </form>
 
 <h4><a href="index.php?page=tasks&action=all">Show All Tasks</a></h4>
-
-<form action="index.php?page=accounts&action=logout" method="POST">
-
-    <div class="container">
-        <button type="submit">Logout</button>
-    </div>
-
-
-</form>
 
 <script src="js/scripts.js"></script>
 </body>

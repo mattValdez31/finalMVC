@@ -26,6 +26,14 @@ include("admin_header.php");
    <?php
        echo 'Logged in as: ' . $_SESSION['userEmail'];
    ?>
+   <form action="index.php?page=accounts&action=logout" method="POST">
+
+       <div class="container">
+               <button type="submit">Logout</button>
+	           </div>
+
+
+		   </form>
 </h3>
 
 <h1>All Accounts</h1>
